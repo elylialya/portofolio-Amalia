@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Portfolio</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Color Palette - Pastel Theme */
+        :root {
+            --primary-color: #ffcccc; /* Soft Pink */
+            --secondary-color: #ffebcc; /* Light Peach */
+            --text-color: #6d6d6d;
+            --background-color: #fff;
+            --highlight-color: #ffe6e6; /* Soft Rose */
+        }
+
+        /* Navbar */
+        header {
+            background-color: #F5F5DC;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: rgba(255, 170, 170, 0.8);
+            font-size: 27px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 170, 170, 0.8);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('cute-cakes.jpg'); /* Background image tetap ada */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between; /* Membuat konten tersebar secara horizontal */
+            align-items: center;
+            color: #fff;
+            margin-top: -50px;
+            padding: 0 50px; /* Memberi jarak ke konten */
+        }
+
+        .hero-content {
+            text-align: center;
+            background-color: rgba(255, 204, 204, 0.8); /* Warna overlay tetap */
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1; /* Mengambil sisa ruang */
+        }
+
+        .hero img {
+            width: 300px; /* Menentukan lebar gambar */
+            height: 300px;
+            border-radius: 100%; /* Membuat gambar berbentuk lingkaran */
+            margin-right: 50px; /* Memberi jarak ke konten hero */
+            background-color: black;
+            object-fit: cover; 
+        }
+        .social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Membuat ikon berada di tengah */
+    gap: 10px; /* Jarak antar ikon */
+}
+
+.social-links a {
+    width: 50px; /* Ukuran ikon lebih besar */
+    height: 40px;
+    color: #ff4343;
+    transition: transform 0.3s;
+}
+
+
+
+.social-links a:hover img {
+    transform: scale(1.2); /* Efek zoom lebih besar saat di-hover */
+}
+
+
+
+        /* Membuat semua section dapat di-scroll */
+        body {
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        section {
+            overflow-y: auto;
+            max-height: 100vh; /* Membatasi ketinggian section agar dapat di-scroll */
+            padding: 50px 0; /* Memberi jarak antar section */
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px;
+            background-color: var(--background-color);
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .bio h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .bio p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 50px;
+            background-color: var(--highlight-color);
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skill-list li {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 50px;
+            background-color: var(--background-color);
+            text-align: center;
+        }
+
+        .experience h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .experience-item p {
+            font-size: 18px;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            padding: 50px;
+            background-color: var(--highlight-color);
+            text-align: center;
+        }
+
+        .certificates h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .certificate-item {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .certificate-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 50px;
+            background-color: var(--background-color);
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+           
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-item {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .project-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-item p {
+           color: #1894c5;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px;
+            background-color: var(--highlight-color);
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff9999; /* Darker shade on hover */
+        }
+
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background-color: #ffe6e6;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Animation Styles */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        /* Menu toggle for small screens */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #ff9999;
+    font-size: 24px;
+}
+
+/* Responsive styling for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Hide nav-links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ff9999;
+        width: 100%;
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    /* Show nav-links when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Display menu toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Style nav links for mobile */
+    .nav-links li {
+        margin: 15px 0;
+        background-color: #F5F5DC;
+        
+
+    }
+
+    .nav-links a {
+        
+        color: #ff9999;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+
+    
+}
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: px;
+        margin-top: 20px;
+        align-items: center; /* Membuat konten di tengah */
+    }
+    
+    .hero-content{
+        margin-bottom: 400px;
+    }
+   
+
+    .hero img {
+
+        border-radius: 100%; /* Membuat gambar menjadi bulat */
+      margin-left: 50px;
+        margin-bottom: 20px; /* Menambahkan jarak di bawah gambar */
+        object-fit: cover; /* Memastikan gambar tetap proporsional */
+    }
+    
+    .about{
+       margin-top: -300px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Mengatur satu kolom untuk tampilan kecil */
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar .nav-links li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+
+}
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Amalia</div>
+            <!-- Tombol Hamburger untuk Tampilan Seluler -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars" id="menu-icon"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#certificates">Sertifikat</a></li>
+                <li><a href="#projects">Projek</a></li>
+                <li><a href="#contact">Hubungi Saya</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            const menuIcon = document.getElementById("menu-icon");
+            
+            navLinks.classList.toggle("active");
+            menuIcon.classList.toggle("fa-bars");
+            menuIcon.classList.toggle("fa-times"); // Menambahkan ikon close
+        }
+    </script>
+    
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+    <img src="foto4.jpg" alt="Profile Photo"> <!-- Foto di sebelah kiri -->
+    <div class="hero-content">
+        <h1>Nor Amalia Rizkiya</h1>
+        <p>Full-stack Web Developer & UI/UX Designer</p>
+        <a href="#projects" class="cta-button">Lihat Proyek</a>
+
+        <!-- Tautan media sosial dengan Font Awesome -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/noramaliarzkiya_?igsh=ZnlxcW9zd2s3OTB6" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/dashboard" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/username" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    
+    
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <h2>Tentang Saya</h2>
+        <div class="bio">
+            <h3>Amalia</h3>
+            <p>Saya adalah seorang web developer yang memulai perjalanan saya di bidang teknologi saat sekolah. Saya telah belajar berbagai teknologi web seperti HTML, CSS, JavaScript, dan PHP, serta framework Laravel untuk pengembangan aplikasi web. Selama di sekolah, saya berkesempatan untuk mengerjakan beberapa proyek yang membantu saya memahami bagaimana membuat dan mengelola website yang interaktif dan fungsional.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills fade-in" id="skills">
+        <h2>Keahlian</h2>
+        <ul class="skill-list">
+            <li>HTML & CSS</li>
+            <li>PHP (Laravel)</li>
+            <li>Desain UI/UX (Figma, Adobe XD)</li>
+        </ul>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience fade-in" id="experience">
+        <h2>Pengalaman</h2>
+        <div class="experience-item">
+            <h3>Pengembangan Web di Sekolah</h3>
+            <p>Di sekolah, saya mendalami dasar-dasar pengembangan web dan berhasil mengerjakan beberapa proyek yang menantang. Melalui kurikulum yang berbasis praktik, saya belajar bagaimana membangun website dari nol, mulai dari struktur front-end hingga logika back-end. Saya juga mendapatkan pengalaman dalam menggunakan database untuk menyimpan data pengguna dan mengelola transaksi secara aman.</p>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+   <!-- Certificates Section -->
+<section class="certificates fade-in" id="certificates">
+    <h2>Sertifikat</h2>
+    <div class="certificates-grid">
+        <div class="certificate-item">
+            <h3>Front-end Web Developer</h3>
+            <img src="frontend.jpg" style="width: 100px;" alt="Front-end Developer Certificate" />
+           
+        </div>
+        <div class="certificate-item">
+            <h3>Web Developer</h3>
+            <img src="web depeloper.jpg" style="width: 100px;" alt="Web Developer Certificate" />
+           
+        </div>
+        <div class="certificate-item">
+            <h3>Install Komputer</h3>
+            <img src="pc.jpg" style="width: 100px; height: 80px;"alt="Install Komputer Certificate" />
+           
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section class="projects fade-in" id="projects">
+        <h2>Projek</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                    <h3>Projek Web Apotek</h3>
+                    <a href="https://github.com/elylialya/Startik.git" target="_blank">
+                    <p>https://github.com/elylialya/Startik.git</p>
+                </a>
+            </div>
+            <div class="project-item">
+               
+                    <h3>Projek Deteksi Spam</h3>
+                    <a href="https://github.com/elylialya/MachineLearning.git" target="_blank">
+                    <p>https://github.com/elylialya/MachineLearning.git</p>
+                </a>
+            </div>
+            <div class="project-item">
+                    <h3>Projek Frontend Apotek</h3>
+                    <a href="  https://github.com/elylialya/Web-Apotek-Startik.git" target="_blank">
+                    <p>https://github.com/elylialya/Web-Apotek-Startik.git</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Hubungi Saya</h2>
+        <form class="contact-form" id="contact-form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" rows="5" placeholder="Pesan" required></textarea>
+            <button type="submit" class="cta-button">Kirim Pesan</button>
+        </form>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Amalia </p>
+    </footer>
+
+    
+</body>
+
+</html>

@@ -355,7 +355,7 @@
 }
 
 /* Responsive styling for screens smaller than 768px */
-@media (max-width: 648px) {
+@media (max-width: 768px) {
     /* Hide nav-links by default */
     .nav-links {
         display: none;
@@ -429,9 +429,38 @@
        margin-top: -300px;
     }
 
+    .projects {
+        padding: 20px; /* Mengatur padding agar terlihat lebih rapi di layar kecil */
+        margin-bottom: 20px;
+    }
+
+    .projects h2 {
+        font-size: 28px; /* Mengurangi ukuran font untuk layar kecil */
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
     .project-grid {
-        grid-template-columns: 1fr; /* Mengatur satu kolom untuk tampilan kecil */
-       
+        grid-template-columns: 1fr; /* Mengubah ke satu kolom untuk tampilan kecil */
+        gap: 15px;
+    }
+
+    .project-item {
+        padding: 15px; /* Mengurangi padding agar konten lebih proporsional di layar kecil */
+        border-radius: 6px;
+    }
+
+    .project-item img {
+        height: 150px; /* Mengurangi tinggi gambar agar sesuai dengan layar kecil */
+    }
+
+    .project-item h3 {
+        font-size: 20px; /* Mengurangi ukuran font untuk judul */
+        margin-bottom: 8px;
+    }
+
+    .project-item p {
+        font-size: 16px; /* Menyesuaikan ukuran font untuk deskripsi */
     }
     
     .certificates-grid {

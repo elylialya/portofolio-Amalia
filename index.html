@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+          font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             background-color: #f9f9f9;
             color: #333;
@@ -24,14 +24,11 @@
 
         /* Color Palette - Pastel Theme */
         :root {
-            --primary-color: #ffcccc;
-            /* Soft Pink */
-            --secondary-color: #ffebcc;
-            /* Light Peach */
+            --primary-color: #ffcccc; /* Soft Pink */
+            --secondary-color: #ffebcc; /* Light Peach */
             --text-color: #6d6d6d;
             --background-color: #fff;
-            --highlight-color: #ffe6e6;
-            /* Soft Rose */
+            --highlight-color: #ffe6e6; /* Soft Rose */
         }
 
         /* Navbar */
@@ -70,66 +67,53 @@
 
         /* Hero Section */
         .hero {
-            background-image: url('cute-cakes.jpg');
-            /* Background image tetap ada */
+            background-image: url('cute-cakes.jpg'); /* Background image tetap ada */
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
-            justify-content: space-between;
-            /* Membuat konten tersebar secara horizontal */
+            justify-content: space-between; /* Membuat konten tersebar secara horizontal */
             align-items: center;
             color: #fff;
             margin-top: -50px;
-            padding: 0 50px;
-            /* Memberi jarak ke konten */
+            padding: 0 50px; /* Memberi jarak ke konten */
         }
 
         .hero-content {
             text-align: center;
-            background-color: rgba(255, 204, 204, 0.8);
-            /* Warna overlay tetap */
+            background-color: rgba(255, 204, 204, 0.8); /* Warna overlay tetap */
             padding: 30px;
             border-radius: 10px;
-            flex: 1;
-            /* Mengambil sisa ruang */
+            flex: 1; /* Mengambil sisa ruang */
         }
 
         .hero img {
-            width: 300px;
-            /* Menentukan lebar gambar */
+            width: 300px; /* Menentukan lebar gambar */
             height: 300px;
-            border-radius: 100%;
-            /* Membuat gambar berbentuk lingkaran */
-            margin-right: 50px;
-            /* Memberi jarak ke konten hero */
+            border-radius: 100%; /* Membuat gambar berbentuk lingkaran */
+            margin-right: 50px; /* Memberi jarak ke konten hero */
             background-color: black;
-            object-fit: cover;
+            object-fit: cover; 
         }
-
         .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            /* Membuat ikon berada di tengah */
-            gap: 10px;
-            /* Jarak antar ikon */
-        }
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Membuat ikon berada di tengah */
+    gap: 10px; /* Jarak antar ikon */
+}
 
-        .social-links a {
-            width: 50px;
-            /* Ukuran ikon lebih besar */
-            height: 40px;
-            color: #ff4343;
-            transition: transform 0.3s;
-        }
+.social-links a {
+    width: 50px; /* Ukuran ikon lebih besar */
+    height: 40px;
+    color: #ff4343;
+    transition: transform 0.3s;
+}
 
 
 
-        .social-links a:hover img {
-            transform: scale(1.2);
-            /* Efek zoom lebih besar saat di-hover */
-        }
+.social-links a:hover img {
+    transform: scale(1.2); /* Efek zoom lebih besar saat di-hover */
+}
 
 
 
@@ -141,10 +125,8 @@
 
         section {
             overflow-y: auto;
-            max-height: 100vh;
-            /* Membatasi ketinggian section agar dapat di-scroll */
-            padding: 50px 0;
-            /* Memberi jarak antar section */
+            max-height: 100vh; /* Membatasi ketinggian section agar dapat di-scroll */
+            padding: 50px 0; /* Memberi jarak antar section */
         }
 
         /* About Section */
@@ -259,11 +241,9 @@
 
         /* Projects Section */
         .projects {
-
+            padding: 5px;
             background-color: var(--background-color);
             margin-bottom: 30px;
-            margin-left: 0px;
-            margin-right: 20px;
 
         }
 
@@ -272,7 +252,7 @@
             text-align: center;
             margin-top: 30px;
             margin-bottom: 40px;
-
+           
         }
 
         .project-grid {
@@ -302,7 +282,7 @@
         }
 
         .project-item p {
-            color: #1894c5;
+           color: #1894c5;
         }
 
         /* Contact Section */
@@ -346,8 +326,7 @@
         }
 
         .cta-button:hover {
-            background-color: #ff9999;
-            /* Darker shade on hover */
+            background-color: #ff9999; /* Darker shade on hover */
         }
 
 
@@ -368,58 +347,56 @@
         }
 
         /* Menu toggle for small screens */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            color: #ff9999;
-            font-size: 24px;
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #ff9999;
+    font-size: 24px;
+}
+
+/* Responsive styling for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Hide nav-links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ff9999;
+        width: 100%;
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    /* Show nav-links when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Display menu toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Style nav links for mobile */
+    .nav-links li {
+        margin: 15px 0;
+        background-color: #F5F5DC;
+        
+
+    }
+
+    .nav-links a {
+        
+        color: #ff9999;
+            text-decoration: none;
+            font-size: 20px;
         }
 
-        /* Responsive styling for screens smaller than 768px */
-        @media (max-width: 768px) {
 
-            /* Hide nav-links by default */
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: #ff9999;
-                width: 100%;
-                text-align: right;
-                padding: 10px 20px;
-            }
-
-            /* Show nav-links when active */
-            .nav-links.active {
-                display: flex;
-            }
-
-            /* Display menu toggle button */
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Style nav links for mobile */
-            .nav-links li {
-                margin: 15px 0;
-                background-color: #F5F5DC;
-
-
-            }
-
-            .nav-links a {
-
-                color: #ff9999;
-                text-decoration: none;
-                font-size: 20px;
-            }
-
-
-
-        }
-
+    
+}
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -428,51 +405,55 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                padding: px;
-                margin-top: 20px;
-                align-items: center;
-                /* Membuat konten di tengah */
-            }
+    .hero {
+        flex-direction: column;
+        padding: px;
+        margin-top: 20px;
+        align-items: center; /* Membuat konten di tengah */
+    }
+    
+    .hero-content{
+        margin-bottom: 400px;
+    }
+   
 
-            .hero-content {
-                margin-bottom: 400px;
-            }
+    .hero img {
+
+        border-radius: 100%; /* Membuat gambar menjadi bulat */
+      margin-left: 50px;
+        margin-bottom: 20px; /* Menambahkan jarak di bawah gambar */
+        object-fit: cover; /* Memastikan gambar tetap proporsional */
+    }
+    
+    .about{
+       margin-top: -300px;
+    }
+
+    .projects{
+        margin-right: 20px;
+
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Mengatur satu kolom untuk tampilan kecil */
+       
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar .nav-links li {
+        display: block;
+        margin-bottom: 10px;
+    }
 
 
-            .hero img {
-
-                border-radius: 100%;
-                /* Membuat gambar menjadi bulat */
-                margin-left: 50px;
-                margin-bottom: 20px;
-                /* Menambahkan jarak di bawah gambar */
-                object-fit: cover;
-                /* Memastikan gambar tetap proporsional */
-            }
-
-            .about {
-                margin-top: -300px;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-                /* Mengatur satu kolom untuk tampilan kecil */
-
-            }
-
-            .certificates-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .navbar .nav-links li {
-                display: block;
-                margin-bottom: 10px;
-            }
+}
 
 
-        }
+
+
+
     </style>
 </head>
 
@@ -495,55 +476,51 @@
             </ul>
         </nav>
     </header>
-
+    
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById("nav-links");
             const menuIcon = document.getElementById("menu-icon");
-
+            
             navLinks.classList.toggle("active");
             menuIcon.classList.toggle("fa-bars");
             menuIcon.classList.toggle("fa-times"); // Menambahkan ikon close
         }
     </script>
-
+    
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="foto4.jpg" alt="Profile Photo"> <!-- Foto di sebelah kiri -->
-        <div class="hero-content">
-            <h1>Nor Amalia Rizkiya</h1>
-            <p>Full-stack Web Developer & UI/UX Designer</p>
-            <a href="#projects" class="cta-button">Lihat Proyek</a>
+    <img src="foto4.jpg" alt="Profile Photo"> <!-- Foto di sebelah kiri -->
+    <div class="hero-content">
+        <h1>Nor Amalia Rizkiya</h1>
+        <p>Full-stack Web Developer & UI/UX Designer</p>
+        <a href="#projects" class="cta-button">Lihat Proyek</a>
 
-            <!-- Tautan media sosial dengan Font Awesome -->
-            <div class="social-links">
-                <a href="https://www.instagram.com/noramaliarzkiya_?igsh=ZnlxcW9zd2s3OTB6" target="_blank"
-                    aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/dashboard" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com/username" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
+        <!-- Tautan media sosial dengan Font Awesome -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/noramaliarzkiya_?igsh=ZnlxcW9zd2s3OTB6" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/dashboard" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/username" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-
-
+    
+    
 
     <!-- About Section -->
     <section class="about fade-in" id="about">
         <h2>Tentang Saya</h2>
         <div class="bio">
             <h3>Amalia</h3>
-            <p>Saya adalah seorang web developer yang memulai perjalanan saya di bidang teknologi saat sekolah. Saya
-                telah belajar berbagai teknologi web seperti HTML, CSS, JavaScript, dan PHP, serta framework Laravel
-                untuk pengembangan aplikasi web. Selama di sekolah, saya berkesempatan untuk mengerjakan beberapa proyek
-                yang membantu saya memahami bagaimana membuat dan mengelola website yang interaktif dan fungsional.</p>
+            <p>Saya adalah seorang web developer yang memulai perjalanan saya di bidang teknologi saat sekolah. Saya telah belajar berbagai teknologi web seperti HTML, CSS, JavaScript, dan PHP, serta framework Laravel untuk pengembangan aplikasi web. Selama di sekolah, saya berkesempatan untuk mengerjakan beberapa proyek yang membantu saya memahami bagaimana membuat dan mengelola website yang interaktif dan fungsional.</p>
         </div>
     </section>
 
@@ -562,35 +539,32 @@
         <h2>Pengalaman</h2>
         <div class="experience-item">
             <h3>Pengembangan Web di Sekolah</h3>
-            <p>Di sekolah, saya mendalami dasar-dasar pengembangan web dan berhasil mengerjakan beberapa proyek yang
-                menantang. Melalui kurikulum yang berbasis praktik, saya belajar bagaimana membangun website dari nol,
-                mulai dari struktur front-end hingga logika back-end. Saya juga mendapatkan pengalaman dalam menggunakan
-                database untuk menyimpan data pengguna dan mengelola transaksi secara aman.</p>
+            <p>Di sekolah, saya mendalami dasar-dasar pengembangan web dan berhasil mengerjakan beberapa proyek yang menantang. Melalui kurikulum yang berbasis praktik, saya belajar bagaimana membangun website dari nol, mulai dari struktur front-end hingga logika back-end. Saya juga mendapatkan pengalaman dalam menggunakan database untuk menyimpan data pengguna dan mengelola transaksi secara aman.</p>
         </div>
     </section>
 
     <!-- Certificates Section -->
-    <!-- Certificates Section -->
-    <section class="certificates fade-in" id="certificates">
-        <h2>Sertifikat</h2>
-        <div class="certificates-grid">
-            <div class="certificate-item">
-                <h3>Front-end Web Developer</h3>
-                <img src="frontend.jpg" style="width: 100px;" alt="Front-end Developer Certificate" />
-
-            </div>
-            <div class="certificate-item">
-                <h3>Web Developer</h3>
-                <img src="web depeloper.jpg" style="width: 100px;" alt="Web Developer Certificate" />
-
-            </div>
-            <div class="certificate-item">
-                <h3>Install Komputer</h3>
-                <img src="pc.jpg" style="width: 100px; height: 80px;" alt="Install Komputer Certificate" />
-
-            </div>
+   <!-- Certificates Section -->
+<section class="certificates fade-in" id="certificates">
+    <h2>Sertifikat</h2>
+    <div class="certificates-grid">
+        <div class="certificate-item">
+            <h3>Front-end Web Developer</h3>
+            <img src="frontend.jpg" style="width: 100px;" alt="Front-end Developer Certificate" />
+           
         </div>
-    </section>
+        <div class="certificate-item">
+            <h3>Web Developer</h3>
+            <img src="web depeloper.jpg" style="width: 100px;" alt="Web Developer Certificate" />
+           
+        </div>
+        <div class="certificate-item">
+            <h3>Install Komputer</h3>
+            <img src="pc.jpg" style="width: 100px; height: 80px;"alt="Install Komputer Certificate" />
+           
+        </div>
+    </div>
+</section>
 
 
     <!-- Projects Section -->
@@ -598,27 +572,27 @@
         <h2>Projek</h2>
         <div class="project-grid">
             <div class="project-item">
-                <h3>Projek Web Apotek</h3>
-                <a href="https://github.com/elylialya/Startik.git" target="_blank">
+                    <h3>Projek Web Apotek</h3>
+                    <a href="https://github.com/elylialya/Startik.git" target="_blank">
                     <p>https://github.com/elylialya/Startik.git</p>
                 </a>
             </div>
             <div class="project-item">
-
-                <h3>Projek Deteksi Spam</h3>
-                <a href="https://github.com/elylialya/MachineLearning.git" target="_blank">
+               
+                    <h3>Projek Deteksi Spam</h3>
+                    <a href="https://github.com/elylialya/MachineLearning.git" target="_blank">
                     <p>https://github.com/elylialya/MachineLearning.git</p>
                 </a>
             </div>
             <div class="project-item">
-                <h3>Projek Frontend Apotek</h3>
-                <a href="  https://github.com/elylialya/Web-Apotek-Startik.git" target="_blank">
+                    <h3>Projek Frontend Apotek</h3>
+                    <a href="  https://github.com/elylialya/Web-Apotek-Startik.git" target="_blank">
                     <p>https://github.com/elylialya/Web-Apotek-Startik.git</p>
                 </a>
             </div>
         </div>
     </section>
-
+    
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -637,7 +611,7 @@
         <p>&copy; 2024 Amalia </p>
     </footer>
 
-
+    
 </body>
 
 </html>
